@@ -8,13 +8,15 @@ function Navbar() {
   let [toggle, setToggle] = useState(false)
   
   useEffect(() => {
-    window.addEventListener('resize', function(){
+    function DisplayNav(){
       if(this.window.outerWidth<=767){
         let navbar = document.querySelector('.navbar');
         navbar.classList.remove('flex');
         navbar.classList.add('none');
       }
-    })
+    }
+    window.addEventListener('resize', DisplayNav)
+    window.addEventListener('load', DisplayNav)
   })
 
   return (

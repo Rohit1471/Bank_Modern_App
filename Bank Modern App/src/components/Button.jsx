@@ -1,8 +1,10 @@
-import React from 'react'
-
-function Button() {
-  return (
-    <div>Button</div>
+function Button({btnClass, btnLink, btnText}){
+  return(
+    <>
+     <div className={`${btnClass}`} >
+      <a href={`${btnLink}`}>{btnText}</a>
+    </div>
+    </>
   )
 }
 

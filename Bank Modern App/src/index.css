@@ -25,7 +25,7 @@
     --black: #000000;
     --primary_color: #072641;
     --secondary_color: rgba(255, 255, 255, 0.60);
-    --tertiary_color: #043C57;
+    --tertiary_color: rgba(255, 255, 255, 0.70);
     --primary_bgcolor: #01423f;
     --secondary_bgcolor: #01423f;
     --link_color: rgba(255, 255, 255, 0.70);
@@ -47,7 +47,6 @@
   }
   
   *, ::after, ::before {  box-sizing: border-box;  margin: 0;  padding: 0px;}
-  
   html { scroll-behavior: smooth; font-size: 16px;  line-height: 24px;  font-weight: 400;  color: var(--white);  font-family: var(--primary_font_family), sans-serif;}
   body { margin: 0;  padding: 0;  font-size: var(--body_font);  line-height: 24px;  font-weight: 400;  color: var(--white);  font-family: var(--primary_font_family), sans-serif;}  
   body.lodaded{ opacity:1; }
@@ -73,7 +72,7 @@
    .space_between, .space_between_child > * { justify-content: space-between;}
    .space_around, .space_around_child > * { justify-content: space-around;}
    .space_evenly, .space_evenly_child > * { justify-content: space-evenly;}
-   .wrap, .wrap_child > * { flex-wrap: wrap; justify-content: center; gap: 20px;}
+   .flex_wrap, .wrap_child > * { flex-wrap: wrap; justify-content: center; gap: 20px;}
   
   /*---------------------------- Position ----------------------------*/
   .relative { position: relative;}
@@ -121,6 +120,7 @@
   .w33{width: 33%;}
   .w50{width: 50%;}
   .w100{width: 100%;} 
+  .mw40{max-width: 40px; width: 100%;}
   .mw118{max-width: 118px; width: 100%;}
   .mw370{max-width: 370px; width: 100%;}
   .mw420{max-width: 420px; width: 100%;}
@@ -140,6 +140,7 @@
   .primary_bgcolor{background-color: var(--primary_color);}
   .secondary_color{color: var(--secondary_color);}
   .secondary_bgcolor{background-color: var(--secondary_color);}
+  .tertiary_color{color: var(--tertiary_color);}
 
   
   /* Making section such that one side touch the view port and other being in wrapper*/
@@ -164,14 +165,32 @@
   h4, .h4, .h4 p {  font-family: var(--primary_font_family), sans-serif;  font-size: var(--h4);  line-height: 1.21;  font-weight: 500;}
   h5, .h5, .h5 p {  font-family: var(--primary_font_family), sans-serif;  font-size: var(--h5);  line-height: 1.3;  font-weight: 500;}
   h6, .h6, .h6 p{  font-family: var(--secondary_font_family), sans-serif;  font-size: var(--h6);  line-height: 1.1;  font-weight: 400;}
-  p, .p, .p p {  font-family: var(--secondary_font_family), sans-serif;  font-size: var(--p);    line-height: 1.5;  font-weight: 400;}
 
   /* This media query is strictly for font only */
   @media only screen and (max-width: 1366px) {
+    body{font-size: 16px;}
+    h1{font-size: 60px;}
+    h2{font-size: 40px;}
+    h3{font-size: 35px;}
+    h4{font-size: 28px;}
+    h5{font-size: 18px;}
+    h6{font-size: 16px;}
   }
   @media only screen and (max-width: 768px) {
+    h1{font-size: 40px;}
+    h2{font-size: 30px;}
+    h3{font-size: 28px;}
+    h4{font-size: 24px;}
+    h5{font-size: 18px;}
+    h6{font-size: 16px;}
   }
-  @media only screen and (max-width: 640px) {
+  @media only screen and (max-width: 480px) {
+    h1{font-size: 30px;}
+    h2{font-size: 28px;}
+    h3{font-size: 25px;}
+    h4{font-size: 20px;}
+    h5{font-size: 18px;}
+    h6{font-size: 16px;}
   }
 
   /*---------------------------- Line Height ----------------------------*/
@@ -321,10 +340,10 @@
   .pr100, .plr100, .pd100 {  padding-right: 100px;}
 
   /*---------------------------- Button ----------------------------*/
-  .button{ display: inline-block; text-decoration: none; color: #FFFFFF; background-color: var(--primary); outline: 0; padding: 10px 40px; font-family: 'europa', sans-serif; font-size: 15px; font-weight: normal; line-height: 1; border: 2px solid var(--mywhite); border-radius: 5px; cursor: pointer; text-align: center; /* transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1); */ box-shadow: inset 0 0 0 0 var(--secondary); transition: ease-out 0.4s; } 
+  .button a{ display: inline-block; font-size: var(--h5); text-decoration: none; color: #00040E; border-radius: 10px; background: linear-gradient(158deg, #DEF9FA -43.27%, #BEF3F5 -21.24%, #9DEDF0 12.19%, #7DE7EB 29.82%, #5CE1E6 51.94%, #33BBCF 90.29%); outline: 0; padding: 18px 33px; font-family: var(--primary_font_family), var(--secondary_font_family); font-weight: 500; line-height: 1; border: 2px solid var(--mywhite); border-radius: 10px; cursor: pointer; text-align: center; /* transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1); */ box-shadow: inset 0 0 0 0 var(--secondary); transition: ease-out 0.4s; } 
   .button i{ padding-left:5px; }
-  .button:hover{  color:#FFFFFF; box-shadow: inset 400px 0 0 0 #08547A;}
-  .button:hover i::before{ color: var(--mywhite); transition: ease-out 0.4s;}
+  .button a:hover{  color:#FFFFFF; box-shadow: inset 400px 0 0 0 #08547A;}
+  .button a:hover i::before{ color: var(--mywhite); transition: ease-out 0.4s;}
 
 
 
@@ -445,6 +464,12 @@
   .hero .circle span{display: flex; width: 13px;}
   .hero .circle p{display: flex; flex-wrap: wrap; padding: 40px;}
   /* Hero Ends */
+
+  /* Two Column Start */
+  .two_column .column2 .listCard:not(:first-child){
+    padding-top:35px;
+  }
+  /* Two Column Ends */
   /* ---------------------------- Page Level CSS Ends ----------------------------*/
   
   
@@ -463,6 +488,12 @@
   @media only screen and (max-width: 1180px) {
   }
   @media only screen and (max-width: 1080px) {
+    .hero .circle {
+      max-width: 80px;
+    }
+    .hero .circle p {
+      padding: 10px;
+    }
   }
   @media only screen and (max-width: 1024px) {  
   }
@@ -471,11 +502,21 @@
   @media only screen and (max-width: 767px) {
     .navbar{ flex-direction: column; position: absolute; top:50px;left: 0; background-color: var(--primary_color); width: 100%; max-width: 100%; transition: all ease-in-out var(--transition_time);}
     .toggle_ham{display: flex;}
+
+    .hero_inner{ flex-direction: column; gap: 20px; padding:0 15px;}
+
+    .stats_inner{flex-wrap: wrap; justify-content: center; gap: 20px;}
+
+    .two_column .two_column_inner{flex-direction: column; gap:40px;}
+    .two_column_description, .two_column_heading{max-width: 100%; text-align: center;}
+    .two_column .button_container{text-align: center;}
+
   }
 
   @media only screen and (max-width: 640px) {   
   }
-  @media only screen and (max-width: 418px) {  
+  @media only screen and (max-width: 480px) {
+    .listCard { flex-direction: column; text-align: center; gap: 10px;}  
   }
   @media only screen and (max-width: 375px) {
   }
