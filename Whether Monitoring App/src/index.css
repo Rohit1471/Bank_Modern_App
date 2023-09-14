@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer components {
+    .wrapper { @apply w-[100%] max-w-[1400px]}
+    img, svg, video{ @apply w-[100%] h-auto border-0 object-cover}
+    a{ @apply no-underline inline-block}
+    li{@apply list-none}
+    .button_v1{@apply /* Button CSS */}
+
+    
+
+  }
