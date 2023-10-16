@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import {Header, Hero, Footer, Weather, Dashboard} from './components'
+import {Header, Hero, Footer} from './components'
 
 function App() {
   const [count, setCount] = useState(0)
